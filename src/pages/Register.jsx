@@ -2,12 +2,9 @@ import {React, useState } from 'react'
 import '../assets/styles/Register.css'
 import axiosInstance from '../axios/interceptors'
 import { useNavigate, Link } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
 
 const Register = () => {
-  const style1 = {
-    'color': 'red',
-    'fontSize': '12px'
-  }
 
   const navigate = useNavigate()
 
@@ -18,6 +15,8 @@ const Register = () => {
   })
 
   const [error, setError] = useState(false)
+
+  const [cookies, setCookies] = useCookies(['user'])
 
 
   const handleChange = (event) => {
@@ -39,9 +38,9 @@ const Register = () => {
 
     axiosInstance.post('register', register)
     .then((response) => {
+      const credential = response?.data
+      setCookies('user', credential)
       console.log(response.data)
-      localStorage.setItem('token', response.data.token)
-      navigate('/dashboard')
     })
     .catch((error) => {
       console.log(error)
