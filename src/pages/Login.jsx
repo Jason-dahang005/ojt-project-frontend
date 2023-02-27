@@ -45,13 +45,6 @@ const Login = () => {
     <div>
       <div className="contain">
         <div className="login">
-        <div className="mb-10">
-            <div className="flex justify-center">
-                <img 
-                    alt=""
-                    className="h-3 w-3"
-                    src="logo.png"/>
-            </div>
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="email">Email</label>
@@ -86,7 +79,6 @@ const Login = () => {
           <p>don't have an account? <Link to="/register">register here!</Link></p>
         </div>
       </div>
-    </div>
     </div>
   )
 }
