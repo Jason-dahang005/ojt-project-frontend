@@ -31,7 +31,7 @@ const Header = () => {
   }
 
   const fetchData = () => {
-    axiosInstance.get('fetchData', {
+    axiosInstance.get('user', {
       'headers': {
         'Authorization': `Bearer ${cookies.user.token}`
        }

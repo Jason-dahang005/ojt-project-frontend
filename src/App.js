@@ -13,14 +13,18 @@ const App = () => {
     <div>
       <BrowserRouter>
       <Routes>
+
+        {/* routes for unauthenticated */}
         <Route element={<Unauthenticated/>} >
           <Route path="/" element={<Login/> } />
           <Route path="/register" element={<Register/> } />
         </Route>
+
+        {/* routes for authenticated */}
         <Route element={<Authenticated/>} >
           <Route element={<Layout/>} >
             <Route exact path="/dashboard" element={<Dashboard/> } />
-          </Route>
+          </Route>  
         </Route>
       </Routes>
       </BrowserRouter>  

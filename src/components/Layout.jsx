@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <div className='grid-container'>
       <div className="grid-item">
-        <Header/>
+        {/* <Header/> */}
       </div>
       <div className="grid-item">
         <Outlet/>
