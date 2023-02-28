@@ -68,7 +68,9 @@ const Login = () => {
               onChange={handleChange}
               className="password-input" 
               placeholder="Enter password" />
+              
               {
+                
                 error ?
                 <span className='error-msg'>Password cannot be empty</span> : ""
               }
