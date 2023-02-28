@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  height: 60px;
+  background-color: #808080;
+  color: #fff;
+}
+
+header .system-logo {
+  padding-left: 2rem;
+}
+
+header .header-icons {
+  display: flex;
+  /* border: 1px solid white; */
+  width: 200px;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+

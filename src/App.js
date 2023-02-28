@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import Unauthenticated from './actions/Unauthenticated';
 import Authenticated from './actions/Authenticated';
+import Layout from './components/Layout';
 
 const App = () => {
   return (
@@ -17,7 +18,9 @@ const App = () => {
           <Route path="/register" element={<Register/> } />
         </Route>
         <Route element={<Authenticated/>} >
-          <Route path="/dashboard" element={<Dashboard/> } />
+          <Route element={<Layout/>} >
+            <Route exact path="/dashboard" element={<Dashboard/> } />
+          </Route>
         </Route>
       </Routes>
       </BrowserRouter>  

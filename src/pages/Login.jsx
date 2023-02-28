@@ -35,7 +35,7 @@ const Login = () => {
     .then((response) => {
       const credential = response?.data
       setCookies('user', credential)
-      console.log(response.data)
+      console.log(credential)
     })
     .catch((error) => {
       console.log(error)
