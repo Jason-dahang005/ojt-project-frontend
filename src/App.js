@@ -5,12 +5,16 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import CO from './pages/CO';
 import OL from './pages/OL'
+import Bill from './pages/Bill';
 import Home from './pages/Home';
 import Unauthenticated from './actions/Unauthenticated';
 import Authenticated from './actions/Authenticated';
 
+
 const App = () => {
+
   return (
+    
     <div>
       <BrowserRouter>
       <Routes>
@@ -20,6 +24,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard/> } />
         <Route path="/CO" element={<CO/> } />
         <Route path="/OL" element={<OL/> } />
+        <Route path="/Bill" element={<Bill/> } />
 
      
         <Route element={<Unauthenticated/>} >
@@ -31,7 +36,9 @@ const App = () => {
         </Route>
       </Routes>
       </BrowserRouter>  
-    </div>
+   
+    
+  </div>
   );
 }
 

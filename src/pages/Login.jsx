@@ -1,8 +1,9 @@
 import React from 'react'
 import '../assets/styles/Login.css'
-import axiosInstance from '../axios/interceptors'
+// import axiosInstance from '../axios/interceptors'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import axios from '../Axios'
 import { useCookies } from 'react-cookie'
 
 const Login = () => {
@@ -16,7 +17,7 @@ const Login = () => {
 
   const [error, setError] = useState(false)
 
-  const [cookies, setCookies] = useCookies(['user'])
+   const [cookies, setCookies] = useCookies(['user'])
 
   const handleChange = (event) => {
     setLogin({
@@ -31,16 +32,19 @@ const Login = () => {
       setError(true)
     }
 
-    axiosInstance.post('login', login)
+    axios.post('login', login)
     .then((response) => {
       const credential = response?.data
       setCookies('user', credential)
       console.log(response.data)
+      navigate('dashboard')
+
     })
     .catch((error) => {
       console.log(error)
     })
   }
+
   return (
     <div>
       <div className="contain">

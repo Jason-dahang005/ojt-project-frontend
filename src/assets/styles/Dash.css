@@ -63,9 +63,10 @@
   nav li {
     display: block;
     margin: 0;
-    height: 40px;
+    height: 20px;
     line-height: 40px;
   }
   nav li:hover {background: rgba(0,0,0,.1);}
   nav a:after {content: none;}
   }
+  

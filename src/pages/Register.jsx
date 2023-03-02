@@ -1,8 +1,9 @@
 import {React, useState } from 'react'
 import '../assets/styles/Register.css'
-import axiosInstance from '../axios/interceptors'
+// import axiosInstance from '../axios/interceptors'
 import { useNavigate, Link } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
+import axios from '../Axios'
 
 const Register = () => {
 
@@ -36,10 +37,10 @@ const Register = () => {
       return
     }
 
-    axiosInstance.post('register', register)
+    axios.post('register', register)
     .then((response) => {
       const credential = response?.data
-      setCookies('user', credential)
+  
       console.log(response.data)
     })
     .catch((error) => {
