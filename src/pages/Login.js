@@ -38,8 +38,9 @@ const Login = () => {
       }
     )
     .then((response) => {
-      const credential = response?.data
-      setCookies('user', credential)
+      // const credential = response?.data
+      // setCookies('user', credential)
+      localStorage.setItem('user', response.data.token)
       console.log(response.data)
       navigate('dashboard')
     })
@@ -114,7 +115,7 @@ const Login = () => {
               color="primary"
             >Sign in</Button>
           </form>
-          <Typography margin='normal' variant='body1'>D on't have an account? <Link to="/register">register here!</Link></Typography>
+          <Typography margin='normal' variant='body1'>Don't have an account? <Link to="/register">register here!</Link></Typography>
         </Box>
       </Box>
     </Stack>

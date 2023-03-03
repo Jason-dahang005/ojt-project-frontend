@@ -37,10 +37,11 @@ const Register = () => {
       }
     )
     .then((response) => {
-      const credential = response?.data
-      setCookies('user', credential)
+      //const credential = response?.data
+      //setCookies('user', credential)
+      //localStorage(response.data.token)
       console.log(response.data)
-      navigate('dashboard')
+      navigate('/')
     })
     .catch((error) => [
       console.log(error)

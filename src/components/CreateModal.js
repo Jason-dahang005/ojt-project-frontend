@@ -29,8 +29,8 @@ const CreateModal = () => {
       {
         headers:
         {
-          'Content-Type' : 'application/json',
-          'Authorization': `Bearer ${cookies.user.token}`
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer  ` + localStorage.getItem(['user'])
         }
       }
     )

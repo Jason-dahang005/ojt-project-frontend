@@ -4,7 +4,9 @@ import CreateOrganization from '../components/CreateOrganization'
 const Dashboard = () => {
   return (
     <div>
-      <CreateOrganization/>
+      {/* <CreateOrganization/> */}
+
+      <CreateModal/>
     </div>
   )
 }

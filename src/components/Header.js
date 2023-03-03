@@ -68,7 +68,8 @@ const Header = () => {
   const fetchData = () => {
     instance.get('user', {
       'headers': {
-        'Authorization': `Bearer ${cookies.user.token}`
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer  ` + localStorage.getItem(['user'])
        }
     })
     .then((response) => {
