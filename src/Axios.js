@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Axios = axios.create({
-    baseURL: 'https://d262-143-44-191-101.ap.ngrok.io/api'
+    baseURL: 'https://f010-143-44-192-161.ap.ngrok.io/api'
 });
 
 // export const setToken = (token) => Cookie.set('oToken', token);
