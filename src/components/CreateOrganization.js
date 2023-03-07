@@ -20,7 +20,7 @@ const CreateOrganization = () => {
         headers:
         {
           'Content-Type' : 'application/json',
-          'Authorization': `Bearer ${cookies.user.token}`
+          'Authorization': `Bearer  ` + localStorage.getItem(['user'])
         }
       }
     )

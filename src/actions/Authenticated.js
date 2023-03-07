@@ -4,9 +4,9 @@ import { useCookies } from 'react-cookie';
 const Authenticated = () => {
   //const [cookies] = useCookies(['user'])
 
-  const token = localStorage.getItem('user')
+  const token = localStorage.getItem(['user'])
   return (
-    token ? <Outlet/> : <Navigate to="/" replace={true} />
+    token ? <Outlet/> : <Navigate to="/" />
   )
 }
 

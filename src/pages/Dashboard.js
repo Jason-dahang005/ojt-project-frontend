@@ -1,12 +1,11 @@
 import CreateModal from '../components/CreateModal'
-import CreateOrganization from '../components/CreateOrganization'
+import ListOrganization from '../components/ListOrganization'
 
 const Dashboard = () => {
   return (
-    <div>
-      {/* <CreateOrganization/> */}
-
-      <CreateModal/>
+    <div> 
+      <CreateModal/>  
+      <ListOrganization/>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axiosInstance from '../axios/interceptors'
-import { useCookies } from 'react-cookie';
 import { useState, useEffect } from 'react'
 import instance from '../api/axios';
 
@@ -20,7 +19,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
+import HomeIcon from '@mui/icons-material/Home';
 const Header = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -36,8 +35,6 @@ const Header = () => {
   }
 
   const navigate = useNavigate()
-
-  const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -59,7 +56,8 @@ const Header = () => {
   const handleLogout = () => {
     axiosInstance.post('logout')
     .then(response => {
-      removeCookie('user')
+      localStorage.removeItem(['user'])
+      navigate('/')
     }).catch(error => {
       console.log(error)
     })
@@ -128,14 +126,6 @@ const Header = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -147,7 +137,8 @@ const Header = () => {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem
+        onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -188,22 +179,14 @@ const Header = () => {
           >
             LOGO GOES HERE
           </Typography>
-          {/* <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search> */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton> */}
+            <IconButton
+            size="large"
+            color="inherit"
+            >
+              <HomeIcon onClick={() => navigate('/dashboard')} />
+            </IconButton>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"

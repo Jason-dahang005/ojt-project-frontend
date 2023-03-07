@@ -14,10 +14,13 @@ import {
 
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
+import { useNavigate } from 'react-router-dom';
 
 const CreateModal = () => {
+
+  const navigate = useNavigate()
   const [open, setOpen] = useState(false)
-  const [organization, setOrganization] = useState('')
+  const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [cookies, setCookie] = useCookies(['user']);
 
@@ -25,17 +28,20 @@ const CreateModal = () => {
     e.preventDefault()
 
     instance.post('create-organization',
-      JSON.stringify({ organization, description }),
+      JSON.stringify({ name, description }),
       {
         headers:
         {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer  ` + localStorage.getItem(['user'])
+          'Content-Type' : 'application/json',
+          'Authorization' : `Bearer ${localStorage.getItem('user')}`
         }
       }
     )
     .then((response) => {
       console.log(response.data)
+      setName('')
+      setDescription('')
+      setOpen(false)
     })
     .catch((error) => {
       console.log(error)
@@ -51,7 +57,8 @@ const CreateModal = () => {
       >
         <Button onClick={() => setOpen(true)} variant="contained" size="small"><AddIcon/> Create Organization</Button>
       </Box>
-      <Modal aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" open={open} sx={{ 
+      <Modal aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" open={open}
+        sx={{ 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -98,12 +105,11 @@ const CreateModal = () => {
                   variant="outlined"
                   label="Name"
                   type='text'
-                  required
                   fullWidth
                   autoComplete='off'
-                  name="organization"
-                  value={organization}
-                  onChange={(e) => setOrganization(e.target.value)}
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   size="small"
                 />
 
@@ -115,7 +121,8 @@ const CreateModal = () => {
                   variant="outlined"
                   label="description"
                   type='text'
-                  required
+                  multiline
+                  rows={4}
                   fullWidth
                   autoComplete='off'
                   name="description"

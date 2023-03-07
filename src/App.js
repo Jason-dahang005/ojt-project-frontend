@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Unauthenticated from './actions/Unauthenticated';
 import Authenticated from './actions/Authenticated';
 import Layout from './components/Layout';
+import Organization from './pages/Organization';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route element={<Authenticated/>} >
           <Route element={<Layout/>} >
             <Route exact path="/dashboard" element={<Dashboard/> } />
+            <Route path="/organization/:id" element={<Organization/> } />
           </Route>  
         </Route>
       </Routes>

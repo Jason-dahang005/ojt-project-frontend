@@ -2,9 +2,10 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useCookies } from 'react-cookie';
 
 const Unauthenticated = () => {
-  const [cookies] = useCookies(['user'])
+  //const [cookies] = useCookies(['user'])
+  const token = localStorage.getItem('user')
   return (
-    cookies?.user?.token ? <Navigate to="dashboard" replace={true} /> : <Outlet/>
+    token ? <Navigate to="dashboard" /> : <Outlet/>
   )
 }
 

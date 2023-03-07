@@ -18,7 +18,7 @@ const Layout = () => {
       <div className="grid-item">
         <div className="flex-container">
           <div className="flex-item">
-            <Dashboard/>
+            <Outlet/>
           </div>
         </div>
       </div>
