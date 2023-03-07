@@ -1,7 +1,7 @@
 import React from 'react'
 import '../assets/styles/CO.css'
 import Dashboard from '../pages/Dashboard'
-const CO = () => {
+const Createorg = () => {
   return (
     
     <div>
@@ -29,4 +29,4 @@ const CO = () => {
       )
     }
     
-    export default CO
+    export default Createorg

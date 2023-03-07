@@ -1,7 +1,7 @@
 import React from 'react'
 import "../assets/styles/OL.css"
-import Dashboard from '../pages/Dashboard'
-const OL = () => {
+import Dashboard from './Dashboard'
+const Orglist = () => {
   return (
     <div>
         <Dashboard/>
@@ -26,4 +26,4 @@ const OL = () => {
 )
 }
 
-export default OL
+export default Orglist
