@@ -3,6 +3,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+
 }
 
 td, th {
@@ -12,7 +13,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #f2f2f2;
 }
 h1 {
     text-align: left;
@@ -20,4 +21,17 @@ h1 {
 h4 {
     text-align: right;
 }
+.buttonicon {
+  background-color: #babeba;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 

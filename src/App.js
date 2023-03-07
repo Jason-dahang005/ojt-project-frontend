@@ -13,6 +13,7 @@ import Message from './pages/Message'
 import Notification from './pages/Notification'
 import Invitation from './pages/Invitation'
 import Logbook from './pages/Logbook'
+import Header from './pages/Header';
 
 
 
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/notif" element={<Notification/> } />
         <Route path="/invi" element={<Invitation/> } />
         <Route path="/logbook" element={<Logbook/> } />
+        <Route path="/header" element={<Header/> } />
 
 
 
