@@ -4,6 +4,7 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
+import Button from '@mui/material/Button';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
@@ -22,7 +23,7 @@ const rows = [
   createData('jason', "gwapo", "12:30", "05-25-2023", "view"),
   createData('brix', "gwapo", "12:30", "05-25-2023", "view"),
   createData('gelo', "gwapo", "12:30", "05-25-2023", "view"),
-  createData('manman', "gwapo", "12:30", "05-25-2023", "view"),
+  createData('manman', "gwapo", "12:30", "05-25-2023","view"),
 ];
 
 export default function BasicTable() {
@@ -60,7 +61,11 @@ export default function BasicTable() {
               <TableCell align="center">{row.description}</TableCell>
               <TableCell align="center">{row.time}</TableCell>
               <TableCell align="center">{row.date}</TableCell>
-              <TableCell align="center">{row.status}</TableCell>
+              <TableCell align="center"><Button>{row.status}
+                </Button>
+              </TableCell>
+
+
             </TableRow>
           ))}
         </TableBody>
