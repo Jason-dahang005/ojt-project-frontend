@@ -9,9 +9,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { FcCalendar } from 'react-icons/fc';
-import { AiOutlineUserAdd } from 'react-icons/ai';
 import {FcSearch} from 'react-icons/fc';
 import Header from './Header'
+import BasicModal from '../components/BasicModal';
+import ViewDetails from '../components/ViewDetails';
+
 
 
 function createData(name, description, time, date, status) {
@@ -19,11 +21,11 @@ function createData(name, description, time, date, status) {
 }
 
 const rows = [
-  createData('Joven', "gwapo", "12:30", "05-25-2023", "view"),
-  createData('jason', "gwapo", "12:30", "05-25-2023", "view"),
-  createData('brix', "gwapo", "12:30", "05-25-2023", "view"),
-  createData('gelo', "gwapo", "12:30", "05-25-2023", "view"),
-  createData('manman', "gwapo", "12:30", "05-25-2023","view"),
+  createData('Joven', "gwapo", "12:30", "05-25-2023", <ViewDetails/>),
+  createData('jason', "gwapo", "12:30", "05-25-2023",  <ViewDetails/>),
+  createData('brix', "gwapo", "12:30", "05-25-2023",  <ViewDetails/>),
+  createData('gelo', "gwapo", "12:30", "05-25-2023",  <ViewDetails/>),
+  createData('manman', "gwapo", "12:30", "05-25-2023", <ViewDetails/>),
 ];
 
 export default function BasicTable() {
@@ -33,11 +35,12 @@ export default function BasicTable() {
       <Header/>
       <br/>
       <br/>
+      
       <h1>LogBook</h1>
     
     <h4>    <a class="buttonicon">search<FcSearch/> </a>
-    <a href="/" class="buttonicon"> Calendar<FcCalendar/></a>
-     <a href="/" class="buttonicon"> Invite<AiOutlineUserAdd/></a></h4>
+ <a href="/" class="buttonicon"> Calendar<FcCalendar/></a> 
+     <a  class="buttoniconss"> <BasicModal/></a></h4>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
