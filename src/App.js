@@ -14,6 +14,7 @@ import Notification from './pages/Notification'
 import Invitation from './pages/Invitation'
 import Logbook from './pages/Logbook'
 import Header from './pages/Header';
+import Datepicker from './pages/Datepicker'
 
 
 
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/invi" element={<Invitation/> } />
         <Route path="/logbook" element={<Logbook/> } />
         <Route path="/header" element={<Header/> } />
+         <Route path="/dp" element={<Datepicker/> } />
 
 
 
