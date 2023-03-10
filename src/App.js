@@ -15,6 +15,7 @@ import Invitation from './pages/Invitation'
 import Logbook from './pages/Logbook'
 import Header from './pages/Header';
 import Datepicker from './pages/Datepicker'
+import Orgprofile from './pages/Orgprofile'
 
 
 
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/logbook" element={<Logbook/> } />
         <Route path="/header" element={<Header/> } />
          <Route path="/dp" element={<Datepicker/> } />
+         <Route path="/op" element={<Orgprofile/> } />
 
 
 

@@ -45,10 +45,11 @@ export default function BasicTable() {
       
       <h1>LogBook</h1>
     <div>
-    <h4><a class="buttoniconsss"><Search/> </a>
-  <a  class="buttoniconsss"> <Datepicker/> </a>
-     <a  class="buttoniconsss"> <BasicModal/></a></h4>
+      <h4>
+  <a  id="buttoniconsss"> <Datepicker/> </a>
+     <a  id="buttoniconsss"> <BasicModal/></a> </h4>
      </div>
+     <a id="buttoniconssss"><Search/> </a>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
