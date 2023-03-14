@@ -4,7 +4,7 @@ import ListOrganization from '../components/ListOrganization'
 const Dashboard = () => {
   return (
     <div> 
-      <CreateModal/>  
+      <CreateModal/>
       <ListOrganization/>
     </div>
   )

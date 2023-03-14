@@ -10,7 +10,7 @@ const ListOrganization = () => {
 
   const [org, setOrg] = useState([])
 
-  useEffect(() => {
+  const fetch = () => {
     instance.get('list-organization', {
       'headers' : {
         'Content-Type': 'application/json',
@@ -19,7 +19,13 @@ const ListOrganization = () => {
     }).then((response) => {
       setOrg(response.data.organization)
     })
-  }, [])
+  }
+
+  useEffect(() => {
+    fetch()
+  }, [org])
+
+
 
 
   
