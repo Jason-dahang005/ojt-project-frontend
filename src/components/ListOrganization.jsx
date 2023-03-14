@@ -24,10 +24,6 @@ const ListOrganization = () => {
   useEffect(() => {
     fetch()
   }, [org])
-
-
-
-
   
   return (
     <Grid container spacing={2} sx={{ padding: '0px 20px' }}>
@@ -35,7 +31,7 @@ const ListOrganization = () => {
         org.map((item) => {
           return (
             <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
-              <Box onClick={() => navigate('organization') }
+              <Box
                 sx={{
                   height: 200,
                   backgroundColor: '#fff',
